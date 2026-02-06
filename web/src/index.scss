@@ -261,6 +261,12 @@ button:active {
   display: flex;
   flex-direction: column;
   gap: calc($gridGap * 2);
+
+    background: rgba(10, 12, 18, 0.362);
+  padding: 12px;
+  border-radius: 10px;
+
+  border: 1px solid rgba(255,255,255,0.06);
 }
 .inventory-grid-header-wrapper {
   display: flex;
@@ -282,22 +288,46 @@ button:active {
 
 // inventory slots
 .inventory-slot {
-  background: linear-gradient(
-    180deg,
-    #1b1f2a,
-    #11141d
-  );
+  background: linear-gradient(180deg, #1b1f2a, #0e111a);
+  border-radius: 3.5px;
+  position: relative;
+  color: #cfcfcf;
+  box-shadow:
+    inset 0 0 20px rgba(0,0,0,0.9);
 
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70%;
-  border-radius: 5px;
-  position: relative;
-  color: #cfcfcf;
-  border: 1px solid rgba(255,255,255,0.05);
-  box-shadow: inset 0 0 35px rgba(0,0,0,10);
+  background-size: 55%;
+  overflow: hidden;
 }
 
+.inventory-slot::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.18) 0%,
+    rgba(255,255,255,0.10) 30%,
+    rgba(255,255,255,0.04) 50%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.inventory-slot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at bottom,
+    rgba(0,0,0,0.4),
+    transparent 60%
+  );
+  z-index: 0;
+}
 
 .inventory-slot-label-box {
   color: #bbb;
@@ -318,7 +348,7 @@ button:active {
 
 .inventory-slot-number {
   color: #ddd;
-  font-size: 11px;
+  font-size: 8px;
   font-weight: 400;
   padding: 3px;
 }
