@@ -129,7 +129,7 @@ button:active {
 .inventory-panel {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 5px;
   max-height: 85vh;
   background: rgba(35, 38, 42, 0.55);
   padding: 12px;
@@ -383,8 +383,6 @@ button:active {
   max-height: 2.2em;
 }
 
-
-
 .inventory-slot-number {
   color: #ddd;
   font-size: 8px;
@@ -397,7 +395,6 @@ button:active {
   flex-direction: column;
   gap: 12px;
 }
-
 
 .item-slot-wrapper {
   display: flex;
